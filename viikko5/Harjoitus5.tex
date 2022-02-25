@@ -1,0 +1,245 @@
+	\documentclass[11pt,a4paper]{amsart}
+
+\RequirePackage[hyphens]{url}
+
+\RequirePackage[OT1]{fontenc}
+\RequirePackage{amsthm,amsmath}
+\RequirePackage[numbers]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{cleveref}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{randomwalk}
+\usepackage{geometry}
+
+
+\usetikzlibrary{arrows,calc}
+
+
+\usetikzlibrary{automata, positioning}
+
+
+\tcbuselibrary{theorems}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{Definitions}{Määritelmä}{breakable,code={\edef\@currentlabelname{#2}},colframe=green!45!black,fonttitle=\bfseries}{Definitions}
+\newtcbtheorem[number within=section]{Examples}{Esimerkki}{breakable,code={\edef\@currentlabelname{#2}},colframe=orange!85!black,fonttitle=\bfseries}{Examples}
+\newtcbtheorem[number within=section]{Theorems}{Lause}{breakable,code={\edef\@currentlabelname{#2}},colframe=blue!85!black,fonttitle=\bfseries}{Theorems}
+\newtcbtheorem[number within=section]{Propositions}{Propositio}{breakable,code={\edef\@currentlabelname{#2}},colframe=teal!85!black,fonttitle=\bfseries}{Propositions}
+\newtcbtheorem[number within=section]{Lemmas}{Lemma}{breakable,code={\edef\@currentlabelname{#2}},colframe=cyan!85!black,fonttitle=\bfseries}{Lemmas}
+\newtcbtheorem{Comments}{Huomautus}{breakable,code={\edef\@currentlabelname{#2}},colframe=pink!85!black,fonttitle=\bfseries}{Comments}
+\newtcbtheorem{Exercises}{Harjoitustehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!55!black,fonttitle=\bfseries}{Exercises}
+\newtcbtheorem[number within=section]{Warnings}{Varoitus}{breakable,code={\edef\@currentlabelname{#2}},colframe=red!65!black,fonttitle=\bfseries}{Warnings}
+\newtcolorbox{Proof}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Todistus:}
+\newtcolorbox{Solution}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Ratkaisu:}
+\newtcbtheorem[number within=section]{HExercises}{Teoreettinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!35!black,fonttitle=\bfseries}{HExercises}
+
+\newtcbtheorem[number within=section]{CExercises}{Laskennallinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!75!black,fonttitle=\bfseries}{HExercises}
+
+
+\usetikzlibrary{decorations.markings}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={->}, % arrows on the axis
+                    ymajorticks=false,
+                    %xlabel={$x$},          % default put x on x-axis
+                    %ylabel={$y$},          % default put y on y-axis
+                    xtick={-1,1},                     
+                    }}
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\M}{\mathrm{Markov}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\red}{\color{red}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\renewcommand{\P}{\mathbb P}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\Re}{\mathrm{Re} \,}
+\renewcommand{\Im}{\mathrm{Im} \,}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{section}
+%\numberwithin{figure}{section}
+
+\usepackage{eurosym}
+
+
+\usepackage{fullpage}
+%\usepackage[notref, notcite]{showkeys} %Comment to hide all the labels in the file
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Sisällysluettelo}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\figurename}%
+    {Kuva}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\abstractname}%
+    {Abstrakti}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\refname}%
+    {Viitteet}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\appendixname}%
+    {Liite}%
+}
+
+\usepackage{tikz-cd}
+
+
+	
+\setcounter{tocdepth}{1}
+
+\title{Algebralliset rakenteet I 2022 -- Viikon 5 harjoitustehtävät}
+
+\author{Christian Webb}
+
+\email{christian.webb@helsinki.fi}
+\begin{document}
+\maketitle
+
+\medskip
+
+\begin{Exercises}{Merkinnät ja peruskäsitteet}{not}
+Pitävätkö seuraavat väitteet paikkansa? Ei tarvitse perustella. 
+\begin{enumerate}
+\item $\Z=\langle -1\rangle$.
+\item Jos $(G,\star)$ on ryhmä ja $g\in G$, niin $\langle g^2\rangle \subset \langle g\rangle$.
+\item Jos $(G,\star)$ on ryhmä ja $g\in G$, niin $\langle g^{-1}\rangle =\langle g\rangle$.
+\item Syklin $(12)\in S_3$ kertaluku on $3$.
+\item Kaikki sykliset ryhmät ovat keskenään isomorfisia.
+\end{enumerate}
+\end{Exercises}
+
+\begin{Solution}
+	\begin{enumerate}
+		\item \textcolor{red}{Ei päde}
+		\item Pätee
+		\item \textcolor{red}{Ei päde}
+		\item Pätee
+		\item Pätee
+	\end{enumerate}
+\end{Solution}
+
+
+\begin{Exercises}{Transpositiot ja symmetrisen ryhmän virittäminen}{transp}
+Permutaatiota $\sigma \in S_n$ kutsutaan \emph{transpositioksi}, jos se on $2$-sykli: $\sigma=(ab)$ jollakin $a,b\in \{1,...,n\}: a\neq b$.
+\begin{enumerate}
+\item Osoita, että mikä tahansa sykli $(a_1a_2...a_k)$ voidaan kirjoittaa transpositioiden tulona:
+\[
+(a_1a_2....a_k)=(a_1a_k)(a_1a_{k-1})\cdots (a_1a_2).
+\]
+\item Olkoon $T_n=\{\sigma\in S_n: \sigma \text{ on transpositio}\}$ transpositioiden joukko. Osoita, että $\langle T_n\rangle=S_n$.
+\end{enumerate}
+{\bf Vihje:} mieti ensimmäisessä kohdassa mille alkiolle kyseinen transpositioiden tulo kuvaa alkion $a_j$. Jälkimmäisessä kohdassa on varmaankin hyvä ajatus muistaa, että jokainen permutaatio voidaan kirjoittaa syklien tulona, ja käyttää ensimmäistä osaa.
+\end{Exercises}
+
+\begin{Exercises}{Kertaluku}{order}
+\begin{enumerate}
+\item Olkoon $\tau \in S_n$ $k$-sykli: $\tau=(a_1...a_k)$. Mikä on alkion $\tau$ kertaluku? (Perustele)
+\item Olkoon $\tau_1,\tau_2\in S_n$ erillisiä syklejä: $\tau_1=(a_1\cdots a_k)$ ja $\tau_2=(b_1...b_l)$ missä $a_i\neq b_j$. Mikä on alkion $\tau_1\tau_2$ kertaluku? (Perustele)
+\item Osaatko kuvata mielivaltaisen permutaation $\sigma\in S_n$ kertalukua sen syklihajotelman avulla?
+\end{enumerate}
+{\bf Vihje:} jos ensimmäisessä kohdassa et heti pääse vauhtiiin, voit miettiä mikä on 2-syklin kertaluku, mikä on 3-syklin kertaluku, ja miettiä, että osaatko yleistää. 2-kohtaan voisi riittää vihjeeksi lyhenne pyj. 3-kohtaan mainittakoon, että pyj voidaan määritellä myös useammalle luvulle.
+\end{Exercises}
+
+\begin{Exercises}{Jäännösluokkaryhmän virittäminen}{cong}
+Olkoon $p$ jokin alkuluku ja tarkastellaan jäännösluokkaryhmää $\Z_p$. Osoita, että $\langle g\rangle=\Z_p$ jokaisella $g\in \Z_p\setminus \{[0]_p\}$.
+
+{\bf Vihje:} Luentomuistiinpanojen Propositiosta 11.3 saattaa olla tässä hyötyä. Erityisesti kannattaa muistaa, että jos $k\in \{1,..,p-1\}$ ja $p$ on alkuluku, niin $\mathrm{syt}(k,p)=1$. Tehtävä on hyvin lyhyt kun löydät sopivan lähtökohdan.
+\end{Exercises}
+
+\begin{Solution}
+  Olkoon $p$ jokin alkuluku. Proposition 11.3.(5) mukaan
+  \begin{align*}
+    \text{Jos } syt(k,n)=1\text{, niin} \langle g^k \rangle=G
+  \end{align*}
+  Koska tiedämme, että
+  \begin{align*}
+    \text{jos } k\in \{1,\cdot,p-1\} \text{ ja } p \text{ on alkuluku, niin } syt(k,p)=1
+  \end{align*}
+  Siis $\langle g^k \rangle = G$.
+
+  Proposition 11.3.(2) mukaan kaikilla $k\in\mathbb{Z}$ pätee $\langle g^k \rangle=\langle g^{syt(n,k)} \rangle$. Aikaisemman perusteella $\langle g^{syt(n,k)} \rangle=\langle g^1 \rangle$. Koska $\mathbb{Z}_p$ on $1$:n virittämä ryhmä, voimme todeta $\langle g \rangle =\mathbb{Z}_p \text{, jokaisella } g \in \mathbb{Z}_p \setminus \{[0]_p\}$.
+\end{Solution}
+
+\begin{Exercises}{Syklisyyden puute}{noncycl}
+\begin{enumerate}
+\item Osoita, että $(\Q,+)$ ei ole syklinen.
+\item Osoita, että $S_4$:n aliryhmä $H=\{e,(12),(34),(12)(34)\}$ ei ole syklinen (saat tietää, että $H$ on ryhmä).
+\end{enumerate}
+{\bf Vihje: } Muistiinpanojen Propositio 11.1 ja 2. viikon harjoitukset saattavat auttaa ensimmäisessä kohdassa. Toisessa, huomaa, että Propositio 11.1 sanoisi, että $H$:n tulisi olla isomorfinen $\Z_4$:n kanssa. Koita miettiä miksi tämä on mahdotonta (huom, jokainen $H$:n alkio $\sigma$ toteuttaa $\sigma^2=e$).
+\end{Exercises}
+
+\begin{Solution}
+  \begin{enumerate}
+    \item  Tehdään ristiriitatodistus. Oletetaan, että $(\mathbb{Q},+)$ on syklinen. Proposition 11.1 jompi kumpi ehdoista täytyy päteä, jotta $(\mathbb{Q},\star)$ on syklinen ryhmä. Koska $\mathbb{Q}$:n kertaluku ei ole äärellinen, voimme keskittyä tutkimaan ehtoa $\mathbb{Q} \cong \mathbb{Z}$. Harjoituksen 2.6 perusteella huomaamme, ettei viimeinenkään ehto pidä paikkaansa. Siis $(\mathbb{Q},+)$ ei ole syklinen.
+    \item Huomaamme propositiosta 11.1 bijektioristiriidan kohdassa (2), siis $H \not \cong \mathbb{Z}_4$. Näin ollen $H$ ei ole syklinen.
+  \end{enumerate}
+\end{Solution}
+
+\begin{Exercises}{Virittämisestä}{gen}
+Anna alla oleville ryhmille $(G,\star)$ esimerkki joukosta $S\subset G$, jolla $S\neq G$ (ja sovitaan myös, että $S\neq G\setminus \{e\}$), mutta $\langle S\rangle=G$. Ei tarvitse perustella.
+\begin{enumerate}
+\item $(G,\star)=(\R,+)$.
+\item $(G,\star)=(\{-1,1\}\times \{-1,1\},\cdot)$, missä $(a,b)\cdot (x,y)=(ax,by)$, missä $ax$ ja $by$ ovat kokonaislukujen tuloja.
+\item $(G,\star)=(0,\infty)$ varustettu tulolla.
+\end{enumerate}
+\end{Exercises}
+\end{document}

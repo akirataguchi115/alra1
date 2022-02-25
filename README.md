@@ -1,0 +1,1 @@
+Algebraaliset rakenteet 1 2022
