@@ -1,0 +1,201 @@
+	\documentclass[11pt,a4paper]{amsart}
+
+\RequirePackage[hyphens]{url}
+
+\RequirePackage[OT1]{fontenc}
+\RequirePackage{amsthm,amsmath}
+\RequirePackage[numbers]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{cleveref}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{randomwalk}
+\usepackage{geometry}
+\usepackage{listings}
+
+
+\usetikzlibrary{arrows,calc}
+
+
+\usetikzlibrary{automata, positioning}
+
+
+\tcbuselibrary{theorems}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{Definitions}{Määritelmä}{breakable,code={\edef\@currentlabelname{#2}},colframe=green!45!black,fonttitle=\bfseries}{Definitions}
+\newtcbtheorem[number within=section]{Examples}{Esimerkki}{breakable,code={\edef\@currentlabelname{#2}},colframe=orange!85!black,fonttitle=\bfseries}{Examples}
+\newtcbtheorem[number within=section]{Theorems}{Lause}{breakable,code={\edef\@currentlabelname{#2}},colframe=blue!85!black,fonttitle=\bfseries}{Theorems}
+\newtcbtheorem[number within=section]{Propositions}{Propositio}{breakable,code={\edef\@currentlabelname{#2}},colframe=teal!85!black,fonttitle=\bfseries}{Propositions}
+\newtcbtheorem[number within=section]{Lemmas}{Lemma}{breakable,code={\edef\@currentlabelname{#2}},colframe=cyan!85!black,fonttitle=\bfseries}{Lemmas}
+\newtcbtheorem{Comments}{Huomautus}{breakable,code={\edef\@currentlabelname{#2}},colframe=pink!85!black,fonttitle=\bfseries}{Comments}
+\newtcbtheorem{Exercises}{Harjoitustehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!55!black,fonttitle=\bfseries}{Exercises}
+\newtcbtheorem[number within=section]{Warnings}{Varoitus}{breakable,code={\edef\@currentlabelname{#2}},colframe=red!65!black,fonttitle=\bfseries}{Warnings}
+\newtcolorbox{Proof}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Todistus:}
+\newtcolorbox{Solution}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Ratkaisu:}
+\newtcbtheorem{HExercises}{Teoreettinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!35!black,fonttitle=\bfseries}{HExercises}
+
+\newtcbtheorem{CExercises}{Laskennallinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!75!black,fonttitle=\bfseries}{HExercises}
+
+
+\usetikzlibrary{decorations.markings}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={->}, % arrows on the axis
+                    ymajorticks=false,
+                    %xlabel={$x$},          % default put x on x-axis
+                    %ylabel={$y$},          % default put y on y-axis
+                    xtick={-1,1},                     
+                    }}
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\M}{\mathrm{Markov}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\red}{\color{red}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\renewcommand{\P}{\mathbb P}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\Re}{\mathrm{Re} \,}
+\renewcommand{\Im}{\mathrm{Im} \,}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{section}
+%\numberwithin{figure}{section}
+
+\usepackage{eurosym}
+
+\usepackage{fullpage}
+%\usepackage[notref, notcite]{showkeys} %Comment to hide all the labels in the file
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Sisällysluettelo}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\figurename}%
+    {Kuva}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\abstractname}%
+    {Abstrakti}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\refname}%
+    {Viitteet}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\appendixname}%
+    {Liite}%
+}
+
+
+
+	
+\setcounter{tocdepth}{1}
+
+\title{Algebralliset rakenteet I 2022 -- Viikon 6 lisätehtävät}
+
+\begin{document}
+
+\maketitle
+
+\begin{CExercises}{Alternoivan ryhmän aliryhmät}{python}
+  Tässä tehtävässä on tarkoitus tarkistaa laskennallisesti onko ryhmällä $A_4$ kuuden alkion aliryhmää. Voit yrittää tehdä tämän fiksummin, jos haluat, mutta alla on hahmotelma, että kuinka tämän voi tehdä. Relevanttia SymPy-materiaalia löytyy taas täältä \url{https://docs.sympy.org/latest/modules/combinatorics/perm_groups.html}.
+
+  \medskip
+
+  \begin{enumerate}
+    \item Tarkista SymPy:llä, että joukko
+          \begin{align*}
+            A_4 & =\{e,(123),(132),(124),(142),(134),(143),(234),(243), \\
+                & \qquad (12)(34),(13)(24),(14)(23)\}.
+          \end{align*}
+          on ryhmä. Tämän voit esimerkiksi tehdä antamalla kullekin näistä permutaatioista nimen ja tarkastamalla, että onko niiden generoima ryhmä (rakennetaan komennolla {\tt PermutationGroup}) sama kuin itse joukko.
+    \item Käy läpi kaikki kuusialkioiset aliryhmäkandidaatit (esimerkiksi kuusialkioiset osajoukot, jotka sisältävät neutraalialkion) ja onko niiden generoima ryhmä sama kuin kyseinen kuusialkioinen joukko. Jos ei mitään tällaista kuusialkioista joukkoa, jonka virittämä ryhmä on joukko itse, ei voi olla kuuden alkion aliryhmää.
+  \end{enumerate}
+  Kirjoita lyhyt raportti tästä.
+\end{CExercises}
+\begin{Solution}
+  \begin{lstlisting}
+    from sympy.combinatorics import Permutation
+    from sympy.combinatorics.polyhedron import Polyhedron
+    from sympy.combinatorics.perm_groups import PermutationGroup
+
+    A = Permutation(123)
+    B = Permutation(132)
+    C = Permutation(124)
+    D = Permutation(142)
+    E = Permutation(134)
+    F = Permutation(143)
+    G = Permutation(234)
+    H = Permutation(243)
+    I = Permutation(12, 34)
+    J = Permutation(13, 24)
+    K = Permutation(14, 23)
+
+    PG = PermutationGroup(A, B, C, D, E, F, G, H, I, J, K)
+
+    print(PG)
+  \end{lstlisting}
+  Tulostus: PermutationGroup([
+    (243)(12 34),
+    (243)(13 24),
+    (243)(14 23)])
+  
+    Huomataan, ettei generoitu ryhmä ole sama kuin joukko $A_4$. Voimme kuitenkin tästä nähdä, että ryhmällä $A_4$ voi olla kuuden alkion aliryhmä.
+\end{Solution}
+
+\end{document}
+

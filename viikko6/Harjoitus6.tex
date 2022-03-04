@@ -1,0 +1,278 @@
+	\documentclass[11pt,a4paper]{amsart}
+
+\RequirePackage[hyphens]{url}
+
+\RequirePackage[OT1]{fontenc}
+\RequirePackage{amsthm,amsmath}
+\RequirePackage[numbers]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{cleveref}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{randomwalk}
+\usepackage{geometry}
+
+
+\usetikzlibrary{arrows,calc}
+
+
+\usetikzlibrary{automata, positioning}
+
+
+\tcbuselibrary{theorems}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{Definitions}{Määritelmä}{breakable,code={\edef\@currentlabelname{#2}},colframe=green!45!black,fonttitle=\bfseries}{Definitions}
+\newtcbtheorem[number within=section]{Examples}{Esimerkki}{breakable,code={\edef\@currentlabelname{#2}},colframe=orange!85!black,fonttitle=\bfseries}{Examples}
+\newtcbtheorem[number within=section]{Theorems}{Lause}{breakable,code={\edef\@currentlabelname{#2}},colframe=blue!85!black,fonttitle=\bfseries}{Theorems}
+\newtcbtheorem[number within=section]{Propositions}{Propositio}{breakable,code={\edef\@currentlabelname{#2}},colframe=teal!85!black,fonttitle=\bfseries}{Propositions}
+\newtcbtheorem[number within=section]{Lemmas}{Lemma}{breakable,code={\edef\@currentlabelname{#2}},colframe=cyan!85!black,fonttitle=\bfseries}{Lemmas}
+\newtcbtheorem{Comments}{Huomautus}{breakable,code={\edef\@currentlabelname{#2}},colframe=pink!85!black,fonttitle=\bfseries}{Comments}
+\newtcbtheorem{Exercises}{Harjoitustehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!55!black,fonttitle=\bfseries}{Exercises}
+\newtcbtheorem[number within=section]{Warnings}{Varoitus}{breakable,code={\edef\@currentlabelname{#2}},colframe=red!65!black,fonttitle=\bfseries}{Warnings}
+\newtcolorbox{Proof}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Todistus:}
+\newtcolorbox{Solution}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Ratkaisu:}
+\newtcbtheorem[number within=section]{HExercises}{Teoreettinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!35!black,fonttitle=\bfseries}{HExercises}
+
+\newtcbtheorem[number within=section]{CExercises}{Laskennallinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!75!black,fonttitle=\bfseries}{HExercises}
+
+
+\usetikzlibrary{decorations.markings}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={->}, % arrows on the axis
+                    ymajorticks=false,
+                    %xlabel={$x$},          % default put x on x-axis
+                    %ylabel={$y$},          % default put y on y-axis
+                    xtick={-1,1},                     
+                    }}
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\M}{\mathrm{Markov}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\red}{\color{red}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\renewcommand{\P}{\mathbb P}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\Re}{\mathrm{Re} \,}
+\renewcommand{\Im}{\mathrm{Im} \,}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{section}
+%\numberwithin{figure}{section}
+
+\usepackage{eurosym}
+
+
+\usepackage{fullpage}
+%\usepackage[notref, notcite]{showkeys} %Comment to hide all the labels in the file
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Sisällysluettelo}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\figurename}%
+    {Kuva}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\abstractname}%
+    {Abstrakti}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\refname}%
+    {Viitteet}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\appendixname}%
+    {Liite}%
+}
+
+\usepackage{tikz-cd}
+
+
+	
+\setcounter{tocdepth}{1}
+
+\title{Algebralliset rakenteet I 2022 -- Viikon 6 harjoitustehtävät}
+
+\pgfplotsset{compat=1.16}
+\begin{document}
+
+\maketitle
+
+Tämän viikon harjoituksissa ({\bf 6 tehtävää}) tutkitaan ekvivalenssiluokkia, sivuluokkia ja Lagrangen lausetta. {\bf Muista perustella päättelysi joko määritelmästä (esim. joko luentomuistiinpanot tai kurssikirja), lemmasta tai muusta tuloksesta, jostakin ``yleisesti tunnetusta faktasta", tai sitten jostakin aiemmin päättelemästäsi.}
+
+Palauta ratkaisusi Moodlessa pe 4.3. klo 23.59 mennessä.
+
+\medskip
+
+Aloitetaan lämmittelyllä, jossa kerrataan viikon pääkäsitteet.
+\begin{Exercises}{Monivalintaa}{mc}
+Pitävätkö seuraavat väitteet paikkansa? Ei tarvitse perustella. 
+\begin{enumerate}
+\item $xRy \quad \Leftrightarrow \quad a\geq b$ on kokonaislukujen ekvivalenssirelaatio. 
+\item $xRy\quad \Leftrightarrow \quad x-y\in \Q$ on reaalilukujen ekvivalenssirelaatio.
+\item Jos $(G,\star)=(\Z_4,+)$ on jäännösluokkaryhmä ja $H=\{[0]_4,[2]_4\}$ (saat tietää, että tämä on aliryhmä). Tällöin $[1]_4H=[3]_4H$.
+\item Edellisen kohdan tapauksessa, $[1]_4H=[2]_4H$.
+\item Kolmannen kohdan tapauksessa, aliryhmän $H$ indeksi on $[G:H]=2$.
+\item Ryhmällä $(G,\star)=(\Z_9,+)$ voi olla aliryhmä $H$, jossa on viisi alkiota. 
+\end{enumerate}
+{\bf Vihje:} (1) ja (2) kohtiin riittänee kerrata ekvivalenssirelaation määritelmä. (3) ja (4) kohtiin kannattaa laskea mitkä kyseiset sivuluokat ovat. (5) kohdassa kannattaa muistutta mieliin indeksin määritelmä tai sitten käyttää Lagrangen lausetta. Samoin (6) kohdassa Lagrangen lause on varmasti avuksi.
+\end{Exercises}
+
+\begin{Solution}
+  \begin{enumerate}
+    \item Pitää
+    \item Pitää
+    \item Pitää
+    \item Ei pidä
+    \item Pitää
+    \item Ei pidä
+  \end{enumerate}
+\end{Solution}
+
+Harjoitellaan sitten ekvivalenssirelaatioon liittyviä käsitteitä. 
+\begin{Exercises}{Eräs ekvivalenssirelaatio}{equiv}
+Olkoon $A$ reaalisten polynomien joukko: $A=\{f:\R\to \R| f \text{ on polynomi}\}$. Sanotaan, että polynomeille $p,q$, $pRq \quad \Leftrightarrow \quad p(0)=q(0)$. 
+\begin{enumerate}
+\item Osoita, että $R$ on ekvivalenssirelaatio.
+\item Kuvaile polynomin $p(x)=x$ ekvivalenssiluokkaa $[p]_R$. Perustele. (Tähän kelpaa useammalla tavalla muotoiltu vastaus kunhan se on oikein).
+\end{enumerate}
+{\bf Vihje:} Tässä ehkä selviää ilman vihjeitä.
+\end{Exercises}
+
+\pagebreak
+
+\begin{Solution}
+  \begin{enumerate}
+    \item $R$ on ekvivalenssirelaatio, mikäli Määritelmän 10.3 ehdot täyttyvät: \begin{enumerate}
+      \item $pRp$ (refleksiivisyys): $p(0)=p(0)$
+      \item Jos $pRq$, niin $qRp$ (symmetrisyys): Jos $p(0)=q(0)$, niin $q(0)=p(0)$
+      \item Jos $pRq$ ja $qRr$, niin $pRr$ (transitiivisuus): Jos $p(0)=q(0)$ ja $q(0)=r(0)$, niin $p(0)=r(0)$
+    \end{enumerate}
+    Siis $R$ on ekvivalenssirelaatio.
+    \item 
+  \end{enumerate}
+\end{Solution}
+
+Katsotaan sitten sivuluokkiin liittyvää ajatusta. 
+\begin{Exercises}{Sivuluokista}{coset}
+Olkoon $(G,\star)$ ryhmä ja $H\leq G$. 
+\begin{enumerate}
+\item  Osoita, että jos $h\in H$, niin $hH=H$.
+\item Osoita, että jos $g\notin H$, niin $gH\neq H$. 
+\end{enumerate}
+{\bf Vihje:} Ensimmäisessä kohdassa kannattaa yrittää osoittaa, että $hH\subset H$ ja $H\subset hH$. Toisessa kohdassa riittää löytää alkio sivuluokasta $gH$, joka ei ole $H$:n alkio. (Tiedät varmuudella ainakain yhden alkion sivuluokasta, joka ei ole $H$:n alkio).
+\end{Exercises}
+
+\begin{Solution}
+  \begin{enumerate}
+    \item 
+  \end{enumerate}
+\end{Solution}
+
+Lasketaan vielä konkreettisesti joitakin sivuluokkia.
+\begin{Exercises}{Lisää sivuluokista}{coset2}
+Olkoon $(G,\star)=(\Z_8,+)$ ja $H=\{[0]_8,[4]_8\}$. 
+\begin{enumerate}
+\item Osoita, että $H\leq G$. 
+\item Määritä kaikki sivuluokat $gH$, missä $g\in G$.
+\end{enumerate}
+{\bf Vihje:}  Ensimmäinen seuraa esim. aliryhmäehdosta. Toinen kohta vaatii sitten lähinnä kärsivällisyyttä, kun kaikki käydään läpi.
+\end{Exercises}
+
+\begin{Solution}
+  \begin{enumerate}
+    \item 
+  \end{enumerate}
+\end{Solution}
+
+Tutustutaan sitten Lagrangen lauseen käyttöön. 
+\begin{Exercises}{Lagrangen lauseen käyttöä}{Lag1}
+Olkoon $p$ ja $q$ alkulukuja, ja olkoon $(G,\star)=(\Z_p\times \Z_q,+)$, missä laskutoimitus on $([a]_p,[b]_q)+([c]_p,[d]_q)=([a+c]_p,[b+d]_q)$ -- tämä on ryhmä muistiinpanojen Proposition 4.1 nojalla.
+
+\medskip 
+
+Osoita, että jos $H\leq G$ ja $H\neq G$, niin $H$ on syklinen ryhmä. 
+
+\medskip
+
+{\bf Vihje:} Lagrangen lauseesta ja Propositiosta 13.2 pitäisi olla apua.
+\end{Exercises}
+
+\begin{Solution}
+\end{Solution}
+
+Katsotaan lopuksi vielä toista Lagrangen lauseen sovellusta. 
+
+\begin{Exercises}{Lagrangen lauseen käyttöä v2}{lag2}
+\begin{enumerate}
+\item Perustele miksi permutaatioryhmä $\{e,(123),(132)\}$ (saat tietää tämän olevan ryhmä) ei voi olla isomorfinen minkään $\Z_8$:n aliryhmän kanssa.
+\item Onko $\{e,(123),(132)\}$ isomorfinen jonkin $\Z_9$:n aliryhmän kanssa?
+\end{enumerate}
+{\bf Vihje:} ensimmäisessä kohdassa Lagrangen lauseesta voi olla apua. Toinen kohta mennee suoraan aikaisempien kertojen työkaluilla.
+\end{Exercises}
+
+\begin{Solution}
+  \begin{enumerate}
+    \item 
+  \end{enumerate}
+\end{Solution}
+
+\end{document}
+
+
+ 
