@@ -1,0 +1,220 @@
+\documentclass[11pt,a4paper]{amsart}
+
+\RequirePackage[hyphens]{url}
+
+\RequirePackage[OT1]{fontenc}
+\RequirePackage{amsthm,amsmath}
+\RequirePackage[numbers]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{cleveref}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{randomwalk}
+\usepackage{geometry}
+
+
+\usetikzlibrary{arrows,calc}
+
+
+\usetikzlibrary{automata, positioning}
+
+
+\tcbuselibrary{theorems}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{Definitions}{Määritelmä}{breakable,code={\edef\@currentlabelname{#2}},colframe=green!45!black,fonttitle=\bfseries}{Definitions}
+\newtcbtheorem[number within=section]{Examples}{Esimerkki}{breakable,code={\edef\@currentlabelname{#2}},colframe=orange!85!black,fonttitle=\bfseries}{Examples}
+\newtcbtheorem[number within=section]{Theorems}{Lause}{breakable,code={\edef\@currentlabelname{#2}},colframe=blue!85!black,fonttitle=\bfseries}{Theorems}
+\newtcbtheorem[number within=section]{Propositions}{Propositio}{breakable,code={\edef\@currentlabelname{#2}},colframe=teal!85!black,fonttitle=\bfseries}{Propositions}
+\newtcbtheorem[number within=section]{Lemmas}{Lemma}{breakable,code={\edef\@currentlabelname{#2}},colframe=cyan!85!black,fonttitle=\bfseries}{Lemmas}
+\newtcbtheorem{Comments}{Huomautus}{breakable,code={\edef\@currentlabelname{#2}},colframe=pink!85!black,fonttitle=\bfseries}{Comments}
+\newtcbtheorem{Exercises}{Harjoitustehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!55!black,fonttitle=\bfseries}{Exercises}
+\newtcbtheorem[number within=section]{Warnings}{Varoitus}{breakable,code={\edef\@currentlabelname{#2}},colframe=red!65!black,fonttitle=\bfseries}{Warnings}
+\newtcolorbox{Proof}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Todistus:}
+\newtcolorbox{Solution}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Ratkaisu:}
+\newtcbtheorem[number within=section]{HExercises}{Teoreettinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!35!black,fonttitle=\bfseries}{HExercises}
+
+\newtcbtheorem[number within=section]{CExercises}{Laskennallinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!75!black,fonttitle=\bfseries}{HExercises}
+
+
+\usetikzlibrary{decorations.markings}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={->}, % arrows on the axis
+                    ymajorticks=false,
+                    %xlabel={$x$},          % default put x on x-axis
+                    %ylabel={$y$},          % default put y on y-axis
+                    xtick={-1,1},                     
+                    }}
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\M}{\mathrm{Markov}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\red}{\color{red}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\renewcommand{\P}{\mathbb P}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\Re}{\mathrm{Re} \,}
+\renewcommand{\Im}{\mathrm{Im} \,}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{section}
+%\numberwithin{figure}{section}
+
+\usepackage{eurosym}
+
+
+\usepackage{fullpage}
+%\usepackage[notref, notcite]{showkeys} %Comment to hide all the labels in the file
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Sisällysluettelo}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\figurename}%
+    {Kuva}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\abstractname}%
+    {Abstrakti}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\refname}%
+    {Viitteet}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\appendixname}%
+    {Liite}%
+}
+
+\usepackage{tikz-cd}
+
+
+	
+\setcounter{tocdepth}{1}
+
+\title{Algebralliset rakenteet I 2022 -- Tenttivastaus}
+
+\pgfplotsset{compat=1.16}
+\begin{document}
+
+\maketitle
+
+Akira Taguchi 014801457
+
+\medskip
+
+\begin{Solution}
+  \textbf{Tehtävä 1}
+  \begin{enumerate}
+    \item Kyllä
+    \item Ei
+    \item Ei
+    \item Kyllä
+    \item Kyllä
+    \item Ei
+  \end{enumerate}
+\end{Solution}
+
+\begin{Solution}
+  \textbf{Tehtävä 2}
+  \begin{enumerate}
+    \item Muunnetaan syklinotaatiot matriisimuotoon:
+          \[
+            \begin{pmatrix}
+              1 & 2 & 3 \\
+              1 & 3 & 2
+            \end{pmatrix} \sigma =
+            \begin{pmatrix}
+              2 & 1 \\
+              1 & 2
+            \end{pmatrix}
+          \]
+          Luodaan $\sigma$ käyttäen syklien tulon määritelmää. $1\rightarrow 3 \rightarrow 2$, $2\rightarrow 1 \rightarrow 1$ ja $3\rightarrow 2\rightarrow 3$. Nyt
+          \[
+            \begin{pmatrix}
+              1 & 2 & 3 \\
+              2 & 1 & 3
+            \end{pmatrix}=
+            \begin{pmatrix}
+              1 & 2 \\
+              2 & 1
+            \end{pmatrix}=(12)
+          \]
+    \item Ryhmän määritelmän mukaan ryhmässä täytyy olla neutraalialkio, käänteisalkio sekä laskutoimituksen täytyy olla liitännäinen. Voimme näiden perusteella osoittaa, että $g\in H$.
+  \end{enumerate}
+\end{Solution}
+
+\begin{Solution}
+  \textbf{Tehtävä 3}
+  \begin{enumerate}
+    \item
+    \item Isomorfian määritelmän mukaan meidän täytyy tarkastaa ovatko $H_1$ ja $H_2$ ope\-raation $\star$ suhteen bijektiiviset. Myös $\star(g\star_1 h)=\star(g)\star_2 \star(h)$ kaikilla $g,h\in H_1$.
+  \end{enumerate}
+\end{Solution}
+
+\begin{Solution}
+  \textbf{Tehtävä 4}
+  \begin{enumerate}
+    \item Lagrangen lauseen mukaan $|G|=[G:H]|H|$. Koska $\frac{7}{4} \not = \mathbb{Z}$, ei kyseenlaista objektia ole olemassa.
+    \item Suoritetaan ristiriitatodistus Lagrangen lauseen avulla.
+    \item $\mathbb{Z}_6=\{1,2,3,4,5,\{1,2,3\}\}$
+  \end{enumerate}
+\end{Solution}
+
+\end{document}
+
+
